@@ -6,7 +6,7 @@
 //only for database connection class
 trait Database{
 
-
+ 
 private $DEFAULT_DB_HOST="localhost";
 private $DEFAULT_DB_USER="root";
 private $DEFAULT_DB_PASSWORD="";
