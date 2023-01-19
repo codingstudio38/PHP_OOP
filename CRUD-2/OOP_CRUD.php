@@ -1,10 +1,9 @@
-<?php 
-require_once "DB_CONNECTIONS.php";
-
-use Database\db\connect;
- 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<?php  
+require_once "DB_CONNECT.php";
+use Database\db\connect;  
 class Phpoopcrud {
-    public $CONNECT; 
+    public $CONNECT;
     public $DEFAULT_CONNECT_PROPERTIES;
     public $DEFAULT_CONNECT;
 
@@ -31,6 +30,7 @@ public function insert($table,$value=array()){
                 $lastid= mysqli_insert_id($this->DEFAULT_CONNECT);//$this->DEFAULT_CONNECT->insert_id;
                 return array("message"=>"Successfully inserted.","lastid"=>$lastid,"status"=>200);
             } else { 
+                // $this->DEFAULT_CONNECT->error
                 return array("error"=>$this->DEFAULT_CONNECT->error,"message"=>"Failed to insert..!!","status"=>400);
             } 
         } else {
@@ -83,9 +83,9 @@ public function tableExists($table){
 
 
 public function __destruct(){
-    $this->DEFAULT_CONNECT->close();
+ mysqli_close($this->DEFAULT_CONNECT);
 } 
-}
+} 
 
 
 
@@ -97,4 +97,5 @@ $data = array(
 $response = $crud->insert("test_tbl",$data);
 echo "<pre>";
 print_r($response);
+
 ?>

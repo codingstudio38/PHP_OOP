@@ -2,11 +2,11 @@
 // require_once './vendor/autoload.php';
 // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'./');
 // $dotenv->load();
-// $_ENV["DEFAULT_DB_HOST"];
+// echo $_ENV["DEFAULT_DB_HOST"];
 //only for database connection class
 trait Database{
 
- 
+  
 private $DEFAULT_DB_HOST="localhost";
 private $DEFAULT_DB_USER="root";
 private $DEFAULT_DB_PASSWORD="";
@@ -14,9 +14,9 @@ private $DEFAULT_DB_NANE="laravel";
 private $DEFAULT_CONNECT;
 
 public function __construct(){
-} 
+}  
 
-
+ 
 private function DEFAULT_CONNECTION(){
     try {
         $this->DEFAULT_CONNECT = new mysqli($this->DEFAULT_DB_HOST,$this->DEFAULT_DB_USER,$this->DEFAULT_DB_PASSWORD,$this->DEFAULT_DB_NANE);
@@ -39,5 +39,6 @@ private function DEFAULT_CONNECT_PROPERTIES(){
 }
 
 }
+
 
 ?>
