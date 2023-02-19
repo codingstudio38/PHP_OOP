@@ -126,7 +126,7 @@ if($total_records > $limit){
     } else {
         $output .= "<li class='page-item'><a class='page-link' href='$url?page=$previous'>Previous</a></li>"; 
     }
-            for ($i=1; $i <= $total_page; $i++) { 
+    for ($i=1; $i <= $total_page; $i++) { 
     array_push($page_links,"$url?page=$i");
     array_push($page_no,$i);                   
                 if($page==$i){
@@ -146,6 +146,10 @@ if($total_records > $limit){
 
     $output .= "</ul></nav>";
    
+
+
+
+
     $lastPage = count($page_no);
     $fiestPage = 1;
     $output_n = "<nav aria-label='Page navigation example'>";
@@ -315,7 +319,7 @@ if(isset($_GET['page'])){
 } else{
     $page = 1;
 }
-$limit=10;
+$limit=2;
 // $column = array("id","name");
 // $response = $crud->read("test_tbl",$column,"","id DESC",10);
 // echo "<pre>";
