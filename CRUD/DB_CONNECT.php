@@ -12,9 +12,9 @@ private $DEFAULT_DB_USER="root";
 private $DEFAULT_DB_PASSWORD="";
 private $DEFAULT_DB_NANE="laravel";
 private $DEFAULT_CONNECT;
-
+ 
 public function __construct(){
-}  
+}   
 
  
 private function DEFAULT_CONNECTION(){

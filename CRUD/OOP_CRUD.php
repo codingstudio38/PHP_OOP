@@ -14,8 +14,8 @@ public $DEFAULT_DB;
 public function __construct(){
     $this->DEFAULT_CONNECT_PROPERTIES = $this->DEFAULT_PROPERTIES();
     $this->DEFAULT_DB = $this->DEFAULT_DB();
-}
-
+}  
+  
 public function create(String $table, Array $value){
     try {
         if(gettype($table)!=="string" || $table==""){
@@ -333,4 +333,3 @@ $paginate = $crud->pagination("test_tbl","",$page,$limit);
 echo $paginate['html_advanced_view'];
 
 ?>
-
