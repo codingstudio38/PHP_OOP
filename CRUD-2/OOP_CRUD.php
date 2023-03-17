@@ -6,7 +6,7 @@ class Phpoopcrud {
     public $CONNECT;
     public $DEFAULT_CONNECT_PROPERTIES;
     public $DEFAULT_CONNECT;
-
+ 
     public function __construct(){
          
         $this->CONNECT = new connect\Connection();

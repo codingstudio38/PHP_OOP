@@ -1,4 +1,5 @@
 <!-- PHP OOP Call Method -->
+<!-- Method Overloading -->
 <img src="img/34.PNG" alt="" style="width:450px;">
 <br><br>
 
@@ -20,7 +21,18 @@ class main{
       if(method_exists($this,$method)){
          call_user_func_array([$this,$method],$arg);
       } else {
-         echo "this is a non existing or private method : $method<br>";
+         //Method Overloading
+         if($method=="calculate"){
+            if(count($arg) <= 0){
+               echo "total 0 arguments<br>";
+            } else {
+               echo "total ".array_sum($arg)."<br>";
+            }
+         } else {
+             echo "this is a non existing or private method : $method<br>";
+         }
+                
+        
       }
    }
 
@@ -28,4 +40,5 @@ class main{
 
 $obj=new main;
 $obj->setName("bidyut","kumar");
+$obj->calculate(3,2);
 ?>

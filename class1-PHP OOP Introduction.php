@@ -4,15 +4,14 @@
 <img src="img/2.PNG" alt="" style="width:450px;">
 <br><br>
 <?php 
-
+ 
 class Calculation{
 public $a,$b,$c;
-
 function sum(){
 $this->c = $this->a+$this->b;
 return $this->c;
 }
-
+ 
 function sub(){
 $this->c = $this->a+$this->b;
 return $this->c;
