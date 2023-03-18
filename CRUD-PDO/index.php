@@ -36,7 +36,7 @@ use Database{
   }
 
 
-  public function GetData(string $table,array $column,array $option,int $page, int $limit,string $orderby,int $record){
+  public function GetData(string $table,array $column,array $option,int $page, int $limit,string $orderby){
     try {
         if(!$this->tableExists($table)){
           throw new Exception("Table not found.");
@@ -64,11 +64,7 @@ use Database{
         $query = $this->CONNECT->prepare($sql);// $query->bindValue(':uid',1,PDO::PARAM_STR);
         $query->execute();
         $checktotal = $query->fetch(PDO::FETCH_ASSOC);//$checktotal = $query->rowCount();
-        if($record <= 1){
-          $total_records = 1;
-        } else{
-          $total_records = $checktotal['totalrecords'];
-        }
+        $total_records = $checktotal['totalrecords'];
         $total_page = ceil($total_records/$limit);
         $start = ($page - 1)*$limit;
         $limit_ = "LIMIT $start,$limit";
@@ -76,11 +72,7 @@ use Database{
 $sql_query = "SELECT $columnis FROM `$table` ORDER BY $order $limit_";
 $query = $this->CONNECT->prepare($sql_query);
 $query->execute();
-if($record <= 1){
-  $alldata = $query->fetch(PDO::FETCH_ASSOC);
-} else {
-  $alldata = $query->fetchAll(PDO::FETCH_ASSOC);
-}
+$alldata = $query->fetchAll(PDO::FETCH_ASSOC);
 
 $lastPage = $total_page;
 $fiestPage = 1;
