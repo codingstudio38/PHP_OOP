@@ -11,7 +11,7 @@ public function sayhello(){
    echo "hello... from sayhello class.";
 }
 
-}
+} 
 
 class Base{
 use Newclass;

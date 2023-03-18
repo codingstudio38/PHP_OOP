@@ -4,7 +4,7 @@ require_once "DB_CONNECT.php";
   
 class Phpoopcrud {
 
-use Database{
+use Database{ 
    Database::DEFAULT_CONNECTION as public DEFAULT_DB;
    Database::DEFAULT_CONNECT_PROPERTIES as public DEFAULT_PROPERTIES;
 } 

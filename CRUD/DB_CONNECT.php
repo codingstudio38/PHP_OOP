@@ -5,7 +5,7 @@
 // echo $_ENV["DEFAULT_DB_HOST"];
 //only for database connection class
 trait Database{
-
+ 
   
 private $DEFAULT_DB_HOST="localhost";
 private $DEFAULT_DB_USER="root";
