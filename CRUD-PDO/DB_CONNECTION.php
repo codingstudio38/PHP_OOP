@@ -2,16 +2,28 @@
 
 
 trait Database {
-
-  private $DB_HOST = "localhost";
-  private $DB_USER = "root";
-  private $DB_PASSWORD = "";
-  private $DB_NANE= "laravel";
-
   
+public function __construct(){
+ 
+}
+
+public function ENVDATA(){
+    require_once __DIR__ . "/vendor/autoload.php";
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'./');
+    $dotenv->load();
+    return $_ENV;
+}
+
+
+public function env(string $key){
+  $ENV = $this->ENVDATA();
+  return isset($ENV[$key])?$ENV[$key]:"";
+}
+
+
 private function CONNECT(){
   try{
-    $Connection = new PDO("mysql:host=$this->DB_HOST;dbname=$this->DB_NANE",$this->DB_USER,$this->DB_PASSWORD);
+    $Connection = new PDO("mysql:host=".$this->env('DB_HOST').";dbname=".$this->env('DB_NANE'),$this->env('DB_USER'),$this->env('DB_PASSWORD'));
     $Connection->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
     $Connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT );
     $Connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );

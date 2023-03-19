@@ -1,6 +1,5 @@
 <?php
 require_once "DB_CONNECTION.php";
-
 class Phpoopcrud {
 use Database{
    Database::CONNECT as public DBCONNECT;
@@ -10,7 +9,7 @@ use Database{
   
   private $CONNECT;
   public function __construct(){
-    $this->CONNECT=$this->DBCONNECT();
+   $this->CONNECT=$this->DBCONNECT();
   }
  
    
