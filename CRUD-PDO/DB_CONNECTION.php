@@ -1,5 +1,5 @@
 <?php 
-
+/// Only for database collection
 
 trait Database {
   
