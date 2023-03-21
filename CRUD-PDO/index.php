@@ -5,7 +5,7 @@ use Database{
    Database::CONNECT as public DBCONNECT;
 }
 
-
+ 
   
   private $CONNECT;
   public function __construct(){

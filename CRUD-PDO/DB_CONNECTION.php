@@ -13,7 +13,7 @@ public function ENVDATA(){
     $dotenv->load();
     return $_ENV;
 }
-
+ 
 
 public function env(string $key){
   $ENV = $this->ENVDATA();
