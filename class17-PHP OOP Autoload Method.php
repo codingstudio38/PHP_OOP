@@ -13,11 +13,14 @@ class main{
    public function __construct()
    {
         echo "this is construct function <br>";
+
    }
 
    public function first()
    {
       echo "this is first function<br>";
+      $obj=new first;
+      $obj1=new second;
    }
 
    
@@ -29,6 +32,8 @@ class main{
 
 }
 
+// $obj=new main;
+// $obj->first();
 $obj=new first;
 $obj1=new second;
 ?>

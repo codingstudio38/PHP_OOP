@@ -1,6 +1,6 @@
 <?php 
 /// Only for database collection
-
+require_once __DIR__ . "/vendor/autoload.php";
 trait Database {
   
 public function __construct(){
@@ -8,7 +8,6 @@ public function __construct(){
 }
 
 public function ENVDATA(){
-    require_once __DIR__ . "/vendor/autoload.php";
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'./');
     $dotenv->load();
     return $_ENV;
