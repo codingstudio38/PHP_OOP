@@ -14,7 +14,7 @@ abstract class Parentclass{
     
     abstract protected function calc($a,$b);
 }
-
+ 
 
 
 class Childclass extends Parentclass{

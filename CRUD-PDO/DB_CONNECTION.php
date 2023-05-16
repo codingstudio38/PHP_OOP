@@ -4,7 +4,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 trait Database {
   
 public function __construct(){
- 
+  
 }
 
 public function ENVDATA(){
